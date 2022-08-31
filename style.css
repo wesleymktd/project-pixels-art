@@ -1,0 +1,32 @@
+#color1 {
+  background-color: blue;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+#color2 {
+  background-color: purple;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+#color3 {
+  background-color: peru;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+#color4 {
+  background-color: green;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
