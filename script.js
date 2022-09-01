@@ -20,3 +20,45 @@ const colorPalet4 = document.createElement('div');
 colorPalet4.className = 'color'
 colorPalet4.id = 'color4'
 paletColor.appendChild(colorPalet4);
+
+// função para mudança de cor ao clicar muda paleta 2
+
+let button = document.getElementById('button-random-color')
+  function generateColor2() {
+
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let index = 0; index < 6; index += 1) {
+    color += letters[Math.floor(Math.random() * 16)]
+  }  
+  colorPalet2.style.backgroundColor = color;
+}
+button.addEventListener('click', generateColor2 );
+
+// função para mudança de cor ao clicar muda paleta 3
+
+function generateColor3() {
+
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let index = 0; index < 6; index += 1) {
+    color += letters[Math.floor(Math.random() * 16)]
+  }  
+  colorPalet3.style.backgroundColor = color;
+}
+button.addEventListener('click', generateColor3 )
+
+// função para mudança de cor ao clicar muda paleta 4
+
+function generateColor4() {
+
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let index = 0; index < 6; index += 1) {
+    color += letters[Math.floor(Math.random() * 16)]
+  }  
+  colorPalet4.style.backgroundColor = color;
+}
+
+button.addEventListener('click', generateColor4 )
+
