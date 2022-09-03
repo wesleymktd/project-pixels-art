@@ -7,7 +7,12 @@ const colorPalet3 = document.createElement('div');
 const colorPalet4 = document.createElement('div');
 
 
-
+function escutaPalet(escuta) {
+  let clique = escuta.target;
+  let selet = document.getElementsByClassName('selected');
+  selet[0].className = 'color';
+  clique.className = 'color selected';
+}
 colorPalet1.className = 'color selected'
 colorPalet1.id = 'color1'
 paletColor.appendChild(colorPalet1);
@@ -26,6 +31,13 @@ paletColor.appendChild(colorPalet3);
 colorPalet4.className = 'color'
 colorPalet4.id = 'color4'
 paletColor.appendChild(colorPalet4);
+
+colorPalet1.addEventListener('click', escutaPalet);
+colorPalet2.addEventListener('click', escutaPalet);
+colorPalet3.addEventListener('click', escutaPalet);
+colorPalet4.addEventListener('click', escutaPalet);
+
+
 
 // função para mudança de cor ao clicar muda paleta 2
 
