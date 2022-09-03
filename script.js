@@ -2,21 +2,27 @@ const paletColor = document.querySelector('#color-palette')
 // cada cor contida nessa paleta de cores
 
 const colorPalet1 = document.createElement('div');
-colorPalet1.className = 'color'
+const colorPalet2 = document.createElement('div');
+const colorPalet3 = document.createElement('div');
+const colorPalet4 = document.createElement('div');
+
+
+
+colorPalet1.className = 'color selected'
 colorPalet1.id = 'color1'
 paletColor.appendChild(colorPalet1);
 
-const colorPalet2 = document.createElement('div');
+
 colorPalet2.className = 'color'
 colorPalet2.id = 'color2'
 paletColor.appendChild(colorPalet2);
 
-const colorPalet3 = document.createElement('div');
+
 colorPalet3.className = 'color'
 colorPalet3.id = 'color3'
 paletColor.appendChild(colorPalet3);
 
-const colorPalet4 = document.createElement('div');
+
 colorPalet4.className = 'color'
 colorPalet4.id = 'color4'
 paletColor.appendChild(colorPalet4);
@@ -80,6 +86,7 @@ if(localStorage.colorPalette) {
   colorPalet4.style.backgroundColor = colorGeneral[2];  
 }
 
+
 let paletGrid = document.getElementById('pixel-board');
 
 // gerar os pixels
@@ -98,29 +105,10 @@ function gerarPixels () {
 gerarPixels();
 
 
-// vou recuperar minha cor assim que a página for carregada e jogar para o elemento da paleta
+  
 
-// 1 - tem que ter algum lugar na função que eu armazene a informação de cor quando ela for acionada no clique
-// e jogar para dentro de localStorage   ok
-// 2 - agora só falta eu conseguir recuperar essa informação e jogar pra dentro da paleta ao carregar minha página
-// 2-1 consigo recuperar através do localStorage[corPaleta2]
-/*   
-const myObj = {
-  name: 'Link',
-  age: 20,
-};
 
-// Precisamos transformar este objeto em uma string. Para isso, utilizamos a função `JSON.stringify()`.
-
-localStorage.setItem('myData', JSON.stringify(myObj));
-
-// Como dito anteriormente, o `localStorage` armazena dados no formato chave e valor, sendo os valores sempre string. Para isso, precisamos passar como primeiro parâmetro do método `setItem()` o nome da chave, passamos `myData` e como segundo parâmetro, a função `JSON.stringify()` com o objeto-valor que queremos armazenar na chave `myData`. Feito isso, teremos salvo no `localStorage` um objeto com a chave `myData` e o valor `{ "name": "Link", "age": 20 }`.
-
-// Agora, precisamos recuperar o objeto armazenado, mas queremos ele no formato original e não como uma string. Para isso, utilizaremos a função `JSON.parse()`.
-
-const recoveredObject = JSON.parse(localStorage.getItem('myData'));
-
-// Utilizamos a função `JSON.parse()` para transformar a string que está armazenada no `localStorage` de volta para seu formato original, um objeto.
-
-console.log(recoveredObject); // { name: 'Link', age: 20 }
-*/
+//ao iniciar a página a cor preta já deve estar selecionada na paleta para pintar os pixels do quadro
+// O elemento que posteriormente deverá receber a classe selected deve ser um dos elementos que possuem a classe color,
+// como especificado no requisito 2
+// O elemento da cor preta deve possuir inicialmente a classe selected  ok
