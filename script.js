@@ -80,6 +80,24 @@ if(localStorage.colorPalette) {
   colorPalet4.style.backgroundColor = colorGeneral[2];  
 }
 
+let paletGrid = document.getElementById('pixel-board');
+
+// gerar os pixels
+
+function gerarPixels () {
+
+  for (let index = 0; index < 25; index += 1) {
+    let pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixel.style.backgroundColor = 'white';
+    paletGrid.appendChild(pixel);
+
+  }
+  
+}
+gerarPixels();
+
+
 // vou recuperar minha cor assim que a página for carregada e jogar para o elemento da paleta
 
 // 1 - tem que ter algum lugar na função que eu armazene a informação de cor quando ela for acionada no clique
