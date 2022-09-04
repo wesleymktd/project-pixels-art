@@ -133,3 +133,16 @@ let PixelsAll = document.getElementsByClassName('pixel');
 for (let index = 0; index < PixelsAll.length; index += 1) {
   PixelsAll[index].addEventListener('click', colorizePixel);
 }
+
+// botão para limpar os pixels preenchendo eles de branco
+
+let clear = document.getElementById('clear-board');
+clear.addEventListener('click', whitePixels);
+
+function whitePixels () {
+  
+  for (let index = 0; index < 25; index += 1) {
+    let pixelsInBoard = document.getElementsByClassName('pixel')[index];
+    pixelsInBoard.style.backgroundColor = 'white';  
+  }      
+}
