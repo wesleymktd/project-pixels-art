@@ -15,21 +15,25 @@ function escutaPalet(escuta) {
 }
 colorPalet1.className = 'color selected'
 colorPalet1.id = 'color1'
+colorPalet1.style.backgroundColor = 'black';
 paletColor.appendChild(colorPalet1);
 
 
 colorPalet2.className = 'color'
 colorPalet2.id = 'color2'
+colorPalet2.style.backgroundColor = 'green';
 paletColor.appendChild(colorPalet2);
 
 
 colorPalet3.className = 'color'
 colorPalet3.id = 'color3'
+colorPalet3.style.backgroundColor = 'pink';
 paletColor.appendChild(colorPalet3);
 
 
 colorPalet4.className = 'color'
 colorPalet4.id = 'color4'
+colorPalet4.style.backgroundColor = 'purple';
 paletColor.appendChild(colorPalet4);
 
 colorPalet1.addEventListener('click', escutaPalet);
@@ -103,24 +107,29 @@ let paletGrid = document.getElementById('pixel-board');
 
 // gerar os pixels
 
+function colorizePixel (cliquei) {
+  let cli = cliquei.target;
+  let selePix = document.querySelector('.selected');
+  cli.style.backgroundColor = selePix.style.backgroundColor;
+
+}
+
+
 function gerarPixels () {
 
   for (let index = 0; index < 25; index += 1) {
     let pixel = document.createElement('div');
     pixel.className = 'pixel';
-    pixel.style.backgroundColor = 'white';
+    //pixel.style.backgroundColor = 'white';
+    //pixel.addEventListener('click', colorizePixel)
     paletGrid.appendChild(pixel);
-
   }
   
 }
 gerarPixels();
+let PixelsAll = document.getElementsByClassName('pixel');
 
 
-  
-
-
-//ao iniciar a página a cor preta já deve estar selecionada na paleta para pintar os pixels do quadro
-// O elemento que posteriormente deverá receber a classe selected deve ser um dos elementos que possuem a classe color,
-// como especificado no requisito 2
-// O elemento da cor preta deve possuir inicialmente a classe selected  ok
+for (let index = 0; index < PixelsAll.length; index += 1) {
+  PixelsAll[index].addEventListener('click', colorizePixel);
+}
