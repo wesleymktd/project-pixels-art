@@ -105,29 +105,61 @@ if(localStorage.colorPalette) {
 
 let paletGrid = document.getElementById('pixel-board');
 
-// gerar os pixels
+// colocar as cores nos pixels
+// armazenar as cores dentro de localStorage
+
+
+let PixelsAll = document.getElementsByClassName('pixel');
 
 function colorizePixel (cliquei) {
   let cli = cliquei.target;
   let selePix = document.querySelector('.selected');
   cli.style.backgroundColor = selePix.style.backgroundColor;
-
+  let colorGenerated = cli.style.backgroundColor;
+  storageColor();
+  
+  //arr2.push(colorGenerated);
+  //localStorage.pixelBoard = JSON.stringify(arr2);
 }
 
+function storageColor() {
+
+  let arr2 = [];
+
+  for (index = 0; index < 25; index += 1) {
+  let pixColorPosition = PixelsAll[index].style.backgroundColor;
+  arr2.push(pixColorPosition);
+  localStorage.pixelBoard = JSON.stringify(arr2)
+}
+}
+
+if(localStorage.pixelBoard) {
+  gerarPixels();
+  let colorPixelBoard = JSON.parse(localStorage.getItem('pixelBoard'));
+  for (index = 0; index < 25; index += 1) {
+    PixelsAll[index].style.backgroundColor = colorPixelBoard[index];
+  }
+  console.log(colorPixelBoard[0]);
+} else {
+  gerarPixels();
+  storageColor();
+}
+
+// gerar os pixels
 
 function gerarPixels () {
 
   for (let index = 0; index < 25; index += 1) {
     let pixel = document.createElement('div');
     pixel.className = 'pixel';
-    //pixel.style.backgroundColor = 'white';
+    pixel.style.backgroundColor = 'white';
     //pixel.addEventListener('click', colorizePixel)
     paletGrid.appendChild(pixel);
   }
   
 }
-gerarPixels();
-let PixelsAll = document.getElementsByClassName('pixel');
+
+
 
 
 for (let index = 0; index < PixelsAll.length; index += 1) {
@@ -146,3 +178,5 @@ function whitePixels () {
     pixelsInBoard.style.backgroundColor = 'white';  
   }      
 }
+
+// armazenar e recuperar o desenho em localStorage
