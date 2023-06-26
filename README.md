@@ -8,9 +8,16 @@
 ## ⚒ Instalando <a name = "installing"></a>
 
 ```bash
+# Clone o projeto
+$ git clone git@github.com:wesleymktd/project-pixels-art.git
+# Acesse
+$ cd ./project-pixels-art
+# Instale as dependencias
+$ npm install
 # Você pode visualizar o projeto rodando a extensão live Search do Vscode no arquivo index.html
 
 ```
 ## Principais tecnologias utilizadas:
+- HTML
 - JavaScript;
 - CSS;
